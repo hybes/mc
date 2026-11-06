@@ -62,7 +62,8 @@ function buildZip(slug, pack) {
       `name=${pack.name}`,
       "iconKey=default",
       "OverrideCommands=true",
-      `PreLaunchCommand="$INST_JAVA" -jar packwiz-installer-bootstrap.jar ${RAW}/packs/${slug}/pack.toml`,
+      // Prism reads this file as QSettings INI: the whole value must be quoted, with inner quotes escaped.
+      `PreLaunchCommand="\\"$INST_JAVA\\" -jar packwiz-installer-bootstrap.jar ${RAW}/packs/${slug}/pack.toml"`,
       "OverrideMemory=true",
       "MinMemAlloc=2048",
       "MaxMemAlloc=6144",
