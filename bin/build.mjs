@@ -1,21 +1,20 @@
 // Builds an importable Prism instance zip for every pack in packs/
 // and writes the install page to docs/index.html (served by GitHub Pages).
-// Usage: node tools/build.mjs
+// Usage: node bin/build.mjs
 import { execFileSync } from "node:child_process";
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
 
 const OWNER = "hybes";
-const REPO = "minecraft-packs";
+const REPO = "mc";
 const RAW = `https://raw.githubusercontent.com/${OWNER}/${REPO}/main`;
 const SITE = `https://${OWNER}.github.io/${REPO}`;
 
 const root = path.resolve(path.dirname(new URL(import.meta.url).pathname), "..");
 const packsDir = path.join(root, "packs");
 const docsDir = path.join(root, "docs");
-const zipsDir = path.join(docsDir, "zips");
-const bootstrap = path.join(root, "tools", "packwiz-installer-bootstrap.jar");
+const bootstrap = path.join(root, "bin", "packwiz.jar");
 
 const LOADER_UIDS = {
   forge: "net.minecraftforge",
@@ -52,7 +51,7 @@ function buildZip(slug, pack) {
   const tmp = fs.mkdtempSync(path.join(os.tmpdir(), "pack-"));
   const inst = path.join(tmp, pack.name);
   fs.mkdirSync(path.join(inst, "minecraft"), { recursive: true });
-  fs.copyFileSync(bootstrap, path.join(inst, "minecraft", "packwiz-installer-bootstrap.jar"));
+  fs.copyFileSync(bootstrap, path.join(inst, "minecraft", "packwiz.jar"));
   fs.writeFileSync(
     path.join(inst, "instance.cfg"),
     [
@@ -63,7 +62,7 @@ function buildZip(slug, pack) {
       "iconKey=default",
       "OverrideCommands=true",
       // Prism reads this file as QSettings INI: the whole value must be quoted, with inner quotes escaped.
-      `PreLaunchCommand="\\"$INST_JAVA\\" -jar packwiz-installer-bootstrap.jar ${RAW}/packs/${slug}/pack.toml"`,
+      `PreLaunchCommand="\\"$INST_JAVA\\" -jar packwiz.jar ${RAW}/packs/${slug}/pack.toml"`,
       "OverrideMemory=true",
       "MinMemAlloc=2048",
       "MaxMemAlloc=6144",
@@ -84,7 +83,7 @@ function buildZip(slug, pack) {
       4,
     ),
   );
-  const out = path.join(zipsDir, `${slug}.zip`);
+  const out = path.join(docsDir, `${slug}.zip`);
   fs.rmSync(out, { force: true });
   // -X drops macOS extra attributes so the zip is identical across rebuilds.
   execFileSync("zip", ["-qrX", out, pack.name], { cwd: tmp });
@@ -96,13 +95,13 @@ const esc = (s) => s.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">"
 function page(packs) {
   const items = packs
     .map(({ slug, pack }) => {
-      const zip = `${SITE}/zips/${slug}.zip`;
+      const zip = `${SITE}/${slug}.zip`;
       return `    <li id="${slug}">
       <h2>${esc(pack.name)}</h2>
       <p class="meta">Minecraft ${esc(pack.mc)} · ${esc(pack.loader)} · ${pack.modCount} mods</p>
       ${pack.description ? `<p>${esc(pack.description)}</p>` : ""}
       <p><a class="install" href="prismlauncher://import?url=${encodeURIComponent(zip)}">Install in Prism</a>
-      <a class="alt" href="zips/${slug}.zip">Download zip instead</a></p>
+      <a class="alt" href="${slug}.zip">Download zip instead</a></p>
     </li>`;
     })
     .join("\n");
@@ -153,7 +152,7 @@ ${items}
 `;
 }
 
-fs.mkdirSync(zipsDir, { recursive: true });
+fs.mkdirSync(docsDir, { recursive: true });
 const packs = fs
   .readdirSync(packsDir)
   .filter((slug) => fs.existsSync(path.join(packsDir, slug, "pack.toml")))
@@ -166,8 +165,8 @@ for (const { slug, pack } of packs) {
   console.log(`built ${slug}: ${pack.name} (${pack.modCount} mods)`);
 }
 // Remove zips for packs that no longer exist.
-for (const f of fs.readdirSync(zipsDir)) {
-  if (!packs.some(({ slug }) => `${slug}.zip` === f)) fs.rmSync(path.join(zipsDir, f));
+for (const f of fs.readdirSync(docsDir).filter((f) => f.endsWith(".zip"))) {
+  if (!packs.some(({ slug }) => `${slug}.zip` === f)) fs.rmSync(path.join(docsDir, f));
 }
 fs.writeFileSync(path.join(docsDir, "index.html"), page(packs));
 fs.writeFileSync(path.join(docsDir, ".nojekyll"), "");

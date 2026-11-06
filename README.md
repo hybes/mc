@@ -2,7 +2,7 @@
 
 Modpacks for Prism Launcher, synced with [packwiz](https://packwiz.infra.link/).
 
-**Install page:** https://hybes.github.io/minecraft-packs/
+**Install page:** https://hybes.github.io/mc/
 
 Each pack in `packs/` is installed once from the install page. After that, Prism runs packwiz-installer before every launch, so anything pushed here reaches every player the next time they press Play.
 
@@ -12,7 +12,7 @@ Each pack in `packs/` is installed once from the install page. After that, Prism
 cd packs/<pack>
 packwiz mr install <modrinth-slug>   # or: packwiz cf install <curseforge-slug>
 packwiz remove <mod>
-cd ../.. && node tools/build.mjs && git add -A && git commit -m "..." && git push
+cd ../.. && node bin/build.mjs && git add -A && git commit -m "..." && git push
 ```
 
 Removing a mod deletes its blocks, items and dimensions from existing worlds. Back up the world first.
@@ -20,9 +20,9 @@ Removing a mod deletes its blocks, items and dimensions from existing worlds. Ba
 ## New pack
 
 ```sh
-node tools/new-pack.mjs <slug> "<Name>" <minecraft-version> <forge|neoforge|fabric|quilt>
+node bin/new.mjs <slug> "<Name>" <minecraft-version> <forge|neoforge|fabric|quilt>
 ```
 
-Add mods, run `node tools/build.mjs`, then commit and push. The pack appears on the install page.
+Add mods, run `node bin/build.mjs`, then commit and push. The pack appears on the install page.
 
 Changing a pack's Minecraft or loader version means everyone reinstalls it from the page.

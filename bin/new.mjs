@@ -1,5 +1,5 @@
 // Creates a new empty pack in packs/<slug>.
-// Usage: node tools/new-pack.mjs <slug> "<Name>" <minecraft-version> <forge|neoforge|fabric|quilt>
+// Usage: node bin/new.mjs <slug> "<Name>" <minecraft-version> <forge|neoforge|fabric|quilt>
 import { execFileSync } from "node:child_process";
 import fs from "node:fs";
 import os from "node:os";
@@ -7,7 +7,7 @@ import path from "node:path";
 
 const [slug, name, mc, loader] = process.argv.slice(2);
 if (!slug || !name || !mc || !["forge", "neoforge", "fabric", "quilt"].includes(loader)) {
-  console.error('Usage: node tools/new-pack.mjs <slug> "<Name>" <minecraft-version> <forge|neoforge|fabric|quilt>');
+  console.error('Usage: node bin/new.mjs <slug> "<Name>" <minecraft-version> <forge|neoforge|fabric|quilt>');
   process.exit(1);
 }
 if (!/^[a-z0-9-]+$/.test(slug)) {
@@ -32,4 +32,4 @@ execFileSync(
 // e4mc lets players join over the internet with no port forwarding.
 execFileSync(packwiz, ["mr", "install", "-y", "e4mc"], { cwd: dir, stdio: "inherit" });
 console.log(`\nCreated packs/${slug}. Add mods with: cd packs/${slug} && packwiz mr install <mod>`);
-console.log("Then run: node tools/build.mjs, commit and push.");
+console.log("Then run: node bin/build.mjs, commit and push.");
