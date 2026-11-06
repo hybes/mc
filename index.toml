@@ -1,0 +1,126 @@
+hash-format = "sha256"
+
+[[files]]
+file = "mods/aether.pw.toml"
+hash = "1aaba088a650cc1499e1871cfa92f97e3d10a9d8c612fbd784b36c12382196de"
+metafile = true
+
+[[files]]
+file = "mods/alexs-caves.pw.toml"
+hash = "0cbc4b2c6b58b7a94f030ae84f18057e5dc78a17bad429f40b8884926a6ab233"
+metafile = true
+
+[[files]]
+file = "mods/aquamirae.pw.toml"
+hash = "a7fd2f5b6c173e0a6fe5aa0e49dbd7cb39821b052cee6441898ad58b6a1170a0"
+metafile = true
+
+[[files]]
+file = "mods/blue-skies.pw.toml"
+hash = "e0b611005c8d2142ca889e850c9f1450f45b1d30086aa8743579dde6ab1bd9af"
+metafile = true
+
+[[files]]
+file = "mods/cerbons-api.pw.toml"
+hash = "b04f3690005952fb2f0d93b742a00d4b25547cbb4e2975aaca89fb0af58a9539"
+metafile = true
+
+[[files]]
+file = "mods/citadel.pw.toml"
+hash = "c7ac7f84731a0ca1fefb3491c3f65c2767afd4be207e094fcb65c4cea99c9549"
+metafile = true
+
+[[files]]
+file = "mods/deeperdarker.pw.toml"
+hash = "eb60f70cc84efa111a51c35311a44ae352b3b9c98ec7ba4e64595ae627e33006"
+metafile = true
+
+[[files]]
+file = "mods/e4mc.pw.toml"
+hash = "e7f4f64ac84d839b087508fcdf12f75c7be8d5e238d02f3e0289fde70f2af1dc"
+metafile = true
+
+[[files]]
+file = "mods/embeddium.pw.toml"
+hash = "5ec0c37f3f4ad07a40c10376668bca80334ddb7ad2bab06eb4de8f7aac339c8e"
+metafile = true
+
+[[files]]
+file = "mods/ferrite-core.pw.toml"
+hash = "902bac905b93271f02bd0951a22bac06a3da24f5c237fcaeb469e14a7679e508"
+metafile = true
+
+[[files]]
+file = "mods/fragmentum.pw.toml"
+hash = "dd7c74c71d3facf74a684055b546cef5430b06b18dfe85cf8761b61ee9c92881"
+metafile = true
+
+[[files]]
+file = "mods/geckolib.pw.toml"
+hash = "7ffae05c3b8101588b231db8116c34b36a77a0c6e6d7e6af867ae1c5b47e4d10"
+metafile = true
+
+[[files]]
+file = "mods/jei.pw.toml"
+hash = "b38d43feb83d6b23059e2eab0d0fc04378564c538817d1e73339d32e5937bca9"
+metafile = true
+
+[[files]]
+file = "mods/lucent.pw.toml"
+hash = "2a25158198d33e13a0f0a79126ac9dc220793a16cf43e3688da290a0d6266689"
+metafile = true
+
+[[files]]
+file = "mods/mezzconfig.pw.toml"
+hash = "8130d6dc3fcde11337b2910efaecff7a5a63ea924d85817f685cdeb9ef5d0292"
+metafile = true
+
+[[files]]
+file = "mods/modernfix.pw.toml"
+hash = "5f5ae83e022377bb87eaf4eef68adffb7958f682f74cd24427f303b6d2a123ce"
+metafile = true
+
+[[files]]
+file = "mods/myths-of-the-sea.pw.toml"
+hash = "87b0881d66cf71d02efe68e05c54652a5c9fd9ecd9908e86417ffd1bf545e09c"
+metafile = true
+
+[[files]]
+file = "mods/resourceful-lib.pw.toml"
+hash = "5c07edd0c8fe82e85efd6c027476ba54cf98291526803b74614c3436292e4ab6"
+metafile = true
+
+[[files]]
+file = "mods/ricks-portal-gun.pw.toml"
+hash = "d7022ceb27c3e49b5bdc07b9728df2ba0fd4685455cf6c3e82fb24bbe7850e10"
+metafile = true
+
+[[files]]
+file = "mods/smartbrainlib.pw.toml"
+hash = "b592adf84840a655afc338c00be282ebe451a295a3ef73ec9d6c54e84a7803c2"
+metafile = true
+
+[[files]]
+file = "mods/structure-gel-api.pw.toml"
+hash = "0a1893b4abfd0e7243095240b329552c082dd3fa7874b43e9b43c94812875472"
+metafile = true
+
+[[files]]
+file = "mods/the-bumblezone.pw.toml"
+hash = "0260084fe80e433cf75c3b74034184c2c3db65caf5a8da7892de9c17f1833ca8"
+metafile = true
+
+[[files]]
+file = "mods/the-midnight.pw.toml"
+hash = "95db9ef3129f183e736783a20b447e094d241bd02b82c0cf80bd016906436e52"
+metafile = true
+
+[[files]]
+file = "mods/the-twilight-forest.pw.toml"
+hash = "d1f859de9867b7433305aef1631aa22a436a4c3924474a21c0a22ab5f2093c04"
+metafile = true
+
+[[files]]
+file = "mods/the-undergarden.pw.toml"
+hash = "60b26d8a45735194cff94abb074ee218012f3592017b565d7dc3a40889c6708d"
+metafile = true

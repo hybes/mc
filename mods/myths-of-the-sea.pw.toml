@@ -1,0 +1,13 @@
+name = "Myths of The Sea"
+filename = "MOTS-Forge-1.20.1-1.3.0(1).jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/WaCchT6K/versions/zThHoP9D/MOTS-Forge-1.20.1-1.3.0%281%29.jar"
+hash-format = "sha512"
+hash = "6c9f7ce13c227241d39d5c4c789cee0cd3fc3d5f034865167cc819a07a203c20ca1fa5f5987a6510352e1ef54f2f167c943ea4b08e1432eb569c454e097cdd02"
+
+[update]
+[update.modrinth]
+mod-id = "WaCchT6K"
+version = "zThHoP9D"

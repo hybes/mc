@@ -1,0 +1,13 @@
+name = "The Midnight"
+filename = "midnight-1.20.1-0.6.7.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/f12ixI8d/versions/mPTFUoKg/midnight-1.20.1-0.6.7.jar"
+hash-format = "sha512"
+hash = "f48d4450a949ccc6fd4058419122cb1394360ace255acb58d13df9bb5a4e4a82b1307ae3441fcd21d66a1ada2bfe370a422853726998572c7525db7647ab83d0"
+
+[update]
+[update.modrinth]
+mod-id = "f12ixI8d"
+version = "mPTFUoKg"

@@ -1,0 +1,13 @@
+name = "Portals & Deep Sea"
+author = "hybes"
+version = "1.0.0"
+pack-format = "packwiz:1.1.0"
+
+[index]
+file = "index.toml"
+hash-format = "sha256"
+hash = "ee3fc0afd20cc7d132d215897c6ed6b8e02c2454dac8d335240a2f25a20cbb7f"
+
+[versions]
+forge = "47.4.28"
+minecraft = "1.20.1"

@@ -1,0 +1,13 @@
+name = "Lucent"
+filename = "lucent-1.20.1-1.5.5.jar"
+side = "client"
+
+[download]
+url = "https://cdn.modrinth.com/data/JE0fgMUp/versions/YHpxVMDQ/lucent-1.20.1-1.5.5.jar"
+hash-format = "sha512"
+hash = "03ecca88448b9a042d9fb744f5e5e153a97b1995f471efd3e6a5aac5b23c24de1559b8dfa6fa0e1bf7a51c5098a3601a445bf0adfd5a29dd28c3e253f42b06ac"
+
+[update]
+[update.modrinth]
+mod-id = "JE0fgMUp"
+version = "YHpxVMDQ"
