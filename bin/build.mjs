@@ -22,6 +22,10 @@ const LOADER_UIDS = {
   fabric: "net.fabricmc.fabric-loader",
   quilt: "org.quiltmc.quilt-loader",
 };
+const LOADER_NAMES = { forge: "Forge", neoforge: "NeoForge", fabric: "Fabric", quilt: "Quilt" };
+
+// Prism names an imported instance after the zip file, so the zip carries the pack's display name.
+const zipName = (pack) => `${pack.name.replace(/[\\/:*?"<>|]/g, "").trim()}.zip`;
 
 // Reads the few values we need from pack.toml without a TOML dependency.
 function readPack(file) {
@@ -83,7 +87,7 @@ function buildZip(slug, pack) {
       4,
     ),
   );
-  const out = path.join(docsDir, `${slug}.zip`);
+  const out = path.join(docsDir, zipName(pack));
   fs.rmSync(out, { force: true });
   // -X drops macOS extra attributes so the zip is identical across rebuilds.
   execFileSync("zip", ["-qrX", out, pack.name], { cwd: tmp });
@@ -95,13 +99,13 @@ const esc = (s) => s.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">"
 function page(packs) {
   const items = packs
     .map(({ slug, pack }) => {
-      const zip = `${SITE}/${slug}.zip`;
+      const file = encodeURIComponent(zipName(pack));
       return `    <li id="${slug}">
       <h2>${esc(pack.name)}</h2>
-      <p class="meta">Minecraft ${esc(pack.mc)} · ${esc(pack.loader)} · ${pack.modCount} mods</p>
+      <p class="meta">Minecraft ${esc(pack.mc)} · ${LOADER_NAMES[pack.loader]} · ${pack.modCount} mods</p>
       ${pack.description ? `<p>${esc(pack.description)}</p>` : ""}
-      <p><a class="install" href="prismlauncher://import?url=${encodeURIComponent(zip)}">Install in Prism</a>
-      <a class="alt" href="${slug}.zip">Download zip instead</a></p>
+      <p><a class="install" href="prismlauncher://import?url=${encodeURIComponent(`${SITE}/${file}`)}">Install in Prism</a>
+      <a class="alt" href="${file}">Download zip instead</a></p>
     </li>`;
     })
     .join("\n");
@@ -166,7 +170,7 @@ for (const { slug, pack } of packs) {
 }
 // Remove zips for packs that no longer exist.
 for (const f of fs.readdirSync(docsDir).filter((f) => f.endsWith(".zip"))) {
-  if (!packs.some(({ slug }) => `${slug}.zip` === f)) fs.rmSync(path.join(docsDir, f));
+  if (!packs.some(({ pack }) => zipName(pack) === f)) fs.rmSync(path.join(docsDir, f));
 }
 fs.writeFileSync(path.join(docsDir, "index.html"), page(packs));
 fs.writeFileSync(path.join(docsDir, ".nojekyll"), "");

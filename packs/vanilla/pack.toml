@@ -1,0 +1,14 @@
+name = "Vanilla + Controller"
+author = "hybes"
+version = "1.0.0"
+description = "Plain Minecraft with controller and Steam Deck support from Controlify."
+pack-format = "packwiz:1.1.0"
+
+[index]
+file = "index.toml"
+hash-format = "sha256"
+hash = "67cc1a8f71088b2e6603e33fe94ad03d023f259d4c3dea6eabe71cb328a2793d"
+
+[versions]
+fabric = "0.20.1"
+minecraft = "26.3"

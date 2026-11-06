@@ -1,13 +1,13 @@
 name = "Portals & Deep Sea"
 author = "hybes"
 version = "1.0.0"
-description = "Twilight Forest, Aether, Blue Skies and more portal dimensions, a portal gun, and deep-sea monsters from Alex's Caves, Aquamirae and Myths of the Sea."
+description = "Twilight Forest, Aether, Blue Skies and more portal dimensions, a portal gun, and deep-sea monsters from Alex's Caves, Aquamirae and Myths of the Sea. Controller support from Controllable."
 pack-format = "packwiz:1.1.0"
 
 [index]
 file = "index.toml"
 hash-format = "sha256"
-hash = "ee3fc0afd20cc7d132d215897c6ed6b8e02c2454dac8d335240a2f25a20cbb7f"
+hash = "77ea9e394c2d12f0eac265063906d7acf713184ec2b5da4c0f649df7176f0b61"
 
 [versions]
 forge = "47.4.28"
