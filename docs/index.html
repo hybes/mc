@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Minecraft Packs</title>
+<style>
+  :root { --bg: #f6f5f2; --fg: #1c1c1a; --muted: #66645e; --line: #dcd9d2; --accent: #2f7a3b; --accent-fg: #fff; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #1a1a18; --fg: #ecebe7; --muted: #a3a19a; --line: #34332f; --accent: #5cb36a; --accent-fg: #0f1a10; }
+  }
+  body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.5 -apple-system, system-ui, sans-serif; }
+  main { max-width: 640px; margin: 0 auto; padding: 32px 16px 64px; }
+  h1 { font-size: 1.6rem; margin: 0 0 4px; }
+  h2 { font-size: 1.2rem; margin: 0; }
+  ul { list-style: none; padding: 0; margin: 24px 0; }
+  li { padding: 20px 0; border-top: 1px solid var(--line); }
+  .meta, .lead, footer { color: var(--muted); }
+  .meta { margin: 2px 0 8px; font-size: 0.9rem; }
+  .install { display: inline-block; background: var(--accent); color: var(--accent-fg); padding: 8px 16px; border-radius: 6px; text-decoration: none; font-weight: 600; margin-right: 12px; }
+  .alt { color: var(--muted); font-size: 0.9rem; }
+  ol { padding-left: 20px; }
+  footer { font-size: 0.9rem; border-top: 1px solid var(--line); padding-top: 16px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Minecraft Packs</h1>
+  <p class="lead">Click Install, then Yes in Prism. Mods update by themselves every time you press Play.</p>
+  <ul>
+    <li id="portals-deep-sea">
+      <h2>Portals &amp; Deep Sea</h2>
+      <p class="meta">Minecraft 1.20.1 · forge · 25 mods</p>
+      <p>Twilight Forest, Aether, Blue Skies and more portal dimensions, a portal gun, and deep-sea monsters from Alex's Caves, Aquamirae and Myths of the Sea.</p>
+      <p><a class="install" href="prismlauncher://import?url=https%3A%2F%2Fhybes.github.io%2Fminecraft-packs%2Fzips%2Fportals-deep-sea.zip">Install in Prism</a>
+      <a class="alt" href="zips/portals-deep-sea.zip">Download zip instead</a></p>
+    </li>
+  </ul>
+  <footer>
+    <p>First time?</p>
+    <ol>
+      <li>Install <a href="https://prismlauncher.org/download/">Prism Launcher</a>.</li>
+      <li>In Prism, open Accounts and sign in with the Microsoft account that owns Minecraft Java.</li>
+      <li>Come back here and click Install.</li>
+    </ol>
+    <p>If Install does nothing, use “Download zip instead”, then in Prism choose Add Instance, Import, and pick the zip.</p>
+  </footer>
+</main>
+</body>
+</html>

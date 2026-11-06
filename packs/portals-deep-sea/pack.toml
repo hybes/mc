@@ -1,6 +1,7 @@
 name = "Portals & Deep Sea"
 author = "hybes"
 version = "1.0.0"
+description = "Twilight Forest, Aether, Blue Skies and more portal dimensions, a portal gun, and deep-sea monsters from Alex's Caves, Aquamirae and Myths of the Sea."
 pack-format = "packwiz:1.1.0"
 
 [index]
