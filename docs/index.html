@@ -13,38 +13,76 @@
   main { max-width: 640px; margin: 0 auto; padding: 32px 16px 64px; }
   h1 { font-size: 1.6rem; margin: 0 0 4px; }
   h2 { font-size: 1.2rem; margin: 0; }
-  ul { list-style: none; padding: 0; margin: 24px 0; }
-  li { padding: 20px 0; border-top: 1px solid var(--line); }
+  a { color: var(--accent); }
+  .packs { list-style: none; padding: 0; margin: 24px 0; }
+  .packs > li { padding: 20px 0; border-top: 1px solid var(--line); }
   .meta, .lead, footer { color: var(--muted); }
   .meta { margin: 2px 0 8px; font-size: 0.9rem; }
   .install { display: inline-block; background: var(--accent); color: var(--accent-fg); padding: 8px 16px; border-radius: 6px; text-decoration: none; font-weight: 600; margin-right: 12px; }
   .alt { color: var(--muted); font-size: 0.9rem; }
-  ol { padding-left: 20px; }
-  footer { font-size: 0.9rem; border-top: 1px solid var(--line); padding-top: 16px; }
+  ol { padding-left: 20px; margin: 8px 0 16px; }
+  ol li { margin: 4px 0; }
+  footer { font-size: 0.95rem; border-top: 1px solid var(--line); padding-top: 20px; }
+  footer h2 { font-size: 1rem; color: var(--fg); }
 </style>
 </head>
 <body>
 <main>
   <h1>Minecraft Packs</h1>
-  <p class="lead">Click Install, then Yes in Prism. Mods update by themselves every time you press Play.</p>
-  <ul>
+  <p class="lead">Click Install, then Yes in Prism. Mods update by themselves every time you press Play. Every pack works with a controller, and the newer ones include WorldEdit and BuildPaste for instant builds.</p>
+  <ul class="packs">
+    <li id="animals">
+      <h2>Animal Friends</h2>
+      <p class="meta">Minecraft 1.21.1 · NeoForge · 35 mods</p>
+      <p>Naturalist, Friends &amp; Foes, Critters and Companions, Spawn and more: hamsters, ducks, capybaras, frogs and talented dogs to find and tame.</p>
+      <p><a class="install" href="prismlauncher://import?url=https%3A%2F%2Fhybes.github.io%2Fmc%2FAnimal%2520Friends.zip">Install in Prism</a>
+      <a class="alt" href="Animal%20Friends.zip">Download zip instead</a></p>
+    </li>
+    <li id="building">
+      <h2>Build &amp; Decorate</h2>
+      <p class="meta">Minecraft 1.21.1 · NeoForge · 37 mods</p>
+      <p>Macaw's furniture, doors, roofs and windows, Handcrafted, Another Furniture, Supplementaries, Chipped and Rechiseled, with Effortless Building for big builds.</p>
+      <p><a class="install" href="prismlauncher://import?url=https%3A%2F%2Fhybes.github.io%2Fmc%2FBuild%2520%2526%2520Decorate.zip">Install in Prism</a>
+      <a class="alt" href="Build%20%26%20Decorate.zip">Download zip instead</a></p>
+    </li>
+    <li id="explorers">
+      <h2>Explorers</h2>
+      <p class="meta">Minecraft 1.21.1 · NeoForge · 38 mods</p>
+      <p>YUNG's dungeons and temples, Dungeons and Taverns, Towns and Towers, the Aether and Twilight Forest, with a minimap, waystones and backpacks.</p>
+      <p><a class="install" href="prismlauncher://import?url=https%3A%2F%2Fhybes.github.io%2Fmc%2FExplorers.zip">Install in Prism</a>
+      <a class="alt" href="Explorers.zip">Download zip instead</a></p>
+    </li>
+    <li id="farm">
+      <h2>Farm &amp; Kitchen</h2>
+      <p class="meta">Minecraft 1.21.1 · NeoForge · 31 mods</p>
+      <p>Farmer's Delight and friends, Let's Do Farm &amp; Charm, Meadow and Beachparty, Cooking for Blockheads and Aquaculture fishing.</p>
+      <p><a class="install" href="prismlauncher://import?url=https%3A%2F%2Fhybes.github.io%2Fmc%2FFarm%2520%2526%2520Kitchen.zip">Install in Prism</a>
+      <a class="alt" href="Farm%20%26%20Kitchen.zip">Download zip instead</a></p>
+    </li>
     <li id="portals">
       <h2>Portals &amp; Deep Sea</h2>
-      <p class="meta">Minecraft 1.20.1 · Forge · 27 mods</p>
+      <p class="meta">Minecraft 1.20.1 · Forge · 30 mods</p>
       <p>Twilight Forest, Aether, Blue Skies and more portal dimensions, a portal gun, and deep-sea monsters from Alex's Caves, Aquamirae and Myths of the Sea. Controller support from Controllable.</p>
       <p><a class="install" href="prismlauncher://import?url=https%3A%2F%2Fhybes.github.io%2Fmc%2FPortals%2520%2526%2520Deep%2520Sea.zip">Install in Prism</a>
       <a class="alt" href="Portals%20%26%20Deep%20Sea.zip">Download zip instead</a></p>
     </li>
+    <li id="rockets">
+      <h2>Rockets &amp; Gadgets</h2>
+      <p class="meta">Minecraft 1.21.1 · NeoForge · 26 mods</p>
+      <p>Ad Astra rockets to the Moon and Mars, Portal and Rick's portal guns, Create with jetpacks, Iron Jetpacks, aircraft and a nuke.</p>
+      <p><a class="install" href="prismlauncher://import?url=https%3A%2F%2Fhybes.github.io%2Fmc%2FRockets%2520%2526%2520Gadgets.zip">Install in Prism</a>
+      <a class="alt" href="Rockets%20%26%20Gadgets.zip">Download zip instead</a></p>
+    </li>
     <li id="vanilla">
       <h2>Vanilla + Controller</h2>
-      <p class="meta">Minecraft 26.3 · Fabric · 4 mods</p>
+      <p class="meta">Minecraft 26.3 · Fabric · 6 mods</p>
       <p>Plain Minecraft with controller and Steam Deck support from Controlify.</p>
       <p><a class="install" href="prismlauncher://import?url=https%3A%2F%2Fhybes.github.io%2Fmc%2FVanilla%2520%252B%2520Controller.zip">Install in Prism</a>
       <a class="alt" href="Vanilla%20%2B%20Controller.zip">Download zip instead</a></p>
     </li>
   </ul>
   <footer>
-    <p>First time?</p>
+    <h2>First time?</h2>
     <ol>
       <li>Install <a href="https://prismlauncher.org/download/">Prism Launcher</a>.</li>
       <li>In Prism, open Accounts and sign in with the Microsoft account that owns Minecraft Java.</li>

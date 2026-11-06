@@ -12,8 +12,10 @@ Each pack in `packs/` is installed once from the install page. After that, Prism
 cd packs/<pack>
 packwiz mr install <modrinth-slug>   # or: packwiz cf install <curseforge-slug>
 packwiz remove <mod>
-cd ../.. && node bin/build.mjs && git add -A && git commit -m "..." && git push
+cd ../.. && node bin/check.mjs <pack> && node bin/build.mjs && git add -A && git commit -m "..." && git push
 ```
+
+`bin/check.mjs` downloads every jar and fails on missing or out-of-range dependencies, incompatible mods, mixins that no longer match another mod's classes (the cause of the Controllable/JEI crash), and jars that need a newer Java. It does not launch the game. JEI is pinned in Portals and Sodium in the 1.21.1 packs for this reason; run the check before unpinning.
 
 Removing a mod deletes its blocks, items and dimensions from existing worlds. Back up the world first.
 

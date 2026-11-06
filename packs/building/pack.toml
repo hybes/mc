@@ -1,0 +1,14 @@
+name = "Build & Decorate"
+author = "hybes"
+version = "1.0.0"
+description = "Macaw's furniture, doors, roofs and windows, Handcrafted, Another Furniture, Supplementaries, Chipped and Rechiseled, with Effortless Building for big builds."
+pack-format = "packwiz:1.1.0"
+
+[index]
+file = "index.toml"
+hash-format = "sha256"
+hash = "ccc3401be950310b4eb58da792203255bbda43005d10e2461fd27030aed4e385"
+
+[versions]
+minecraft = "1.21.1"
+neoforge = "21.1.265"

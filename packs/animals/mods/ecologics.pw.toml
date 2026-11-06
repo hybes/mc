@@ -1,0 +1,13 @@
+name = "Ecologics"
+filename = "Ecologics-NeoForge-1.21.1-2.3.10_1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/NCKpPR0Z/versions/NFmPPUo2/Ecologics-NeoForge-1.21.1-2.3.10_1.jar"
+hash-format = "sha512"
+hash = "0e1624466cb268e58e68896f6398ef80a8881d4cf854d2f450a66d6372d685bd74f22d955656eb2cd7cf4b4a04d5fb6130e844e63a9ced75c99c3111bd960ff6"
+
+[update]
+[update.modrinth]
+mod-id = "NCKpPR0Z"
+version = "NFmPPUo2"

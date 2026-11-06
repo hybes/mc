@@ -1,0 +1,14 @@
+name = "Rockets & Gadgets"
+author = "hybes"
+version = "1.0.0"
+description = "Ad Astra rockets to the Moon and Mars, Portal and Rick's portal guns, Create with jetpacks, Iron Jetpacks, aircraft and a nuke."
+pack-format = "packwiz:1.1.0"
+
+[index]
+file = "index.toml"
+hash-format = "sha256"
+hash = "325582f7d97fb7c9ea08877b634e43cff9fdedcb60319adab7611feee023af82"
+
+[versions]
+minecraft = "1.21.1"
+neoforge = "21.1.265"

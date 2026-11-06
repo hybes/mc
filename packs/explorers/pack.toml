@@ -1,0 +1,14 @@
+name = "Explorers"
+author = "hybes"
+version = "1.0.0"
+description = "YUNG's dungeons and temples, Dungeons and Taverns, Towns and Towers, the Aether and Twilight Forest, with a minimap, waystones and backpacks."
+pack-format = "packwiz:1.1.0"
+
+[index]
+file = "index.toml"
+hash-format = "sha256"
+hash = "bf762d4364103fdc609fc377c05e543c4507f36c4b394136a5ca0719707ab3e4"
+
+[versions]
+minecraft = "1.21.1"
+neoforge = "21.1.265"

@@ -1,0 +1,13 @@
+name = "Promenade"
+filename = "promenade-neoforge-6.0.1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/GuE5FpvB/versions/giEoCx7h/promenade-neoforge-6.0.1.jar"
+hash-format = "sha512"
+hash = "3f09439ca5b5a72f37e8301e042672c019104d96dc6e79635bb6420da50dd9d9844df9bd23e90edcab8d7657065631f7c320eb4e31af2a376e7e283ef40d5a86"
+
+[update]
+[update.modrinth]
+mod-id = "GuE5FpvB"
+version = "giEoCx7h"

@@ -1,0 +1,14 @@
+name = "Animal Friends"
+author = "hybes"
+version = "1.0.0"
+description = "Naturalist, Friends & Foes, Critters and Companions, Spawn and more: hamsters, ducks, capybaras, frogs and talented dogs to find and tame."
+pack-format = "packwiz:1.1.0"
+
+[index]
+file = "index.toml"
+hash-format = "sha256"
+hash = "eb7362e3c506e6aac77a5306967655db85cf8c6d66eacc837d704d61bc2e99a7"
+
+[versions]
+minecraft = "1.21.1"
+neoforge = "21.1.265"

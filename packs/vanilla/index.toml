@@ -1,6 +1,11 @@
 hash-format = "sha256"
 
 [[files]]
+file = "mods/buildpaste.pw.toml"
+hash = "1bce71895e7251cbb9d1e31026bc8fae36e97345be8c0552da5dc3d4d3bbd10e"
+metafile = true
+
+[[files]]
 file = "mods/controlify.pw.toml"
 hash = "d9cba6cac8489cdc81e42cec6e663cca1ee86e5314ff13feb90bacaaf386f31d"
 metafile = true
@@ -13,6 +18,11 @@ metafile = true
 [[files]]
 file = "mods/fabric-api.pw.toml"
 hash = "79de372a05dde6ee4f23ced936835dbd9d43b64ba61ae1990cb0e59dce460e6a"
+metafile = true
+
+[[files]]
+file = "mods/worldedit.pw.toml"
+hash = "7a5c3bfa2b6572c8e2d859e77798fdad5c69bdc027e4040d4f98f53e812875a5"
 metafile = true
 
 [[files]]

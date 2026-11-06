@@ -5,51 +5,18 @@ import { execFileSync } from "node:child_process";
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
+import { LOADER_NAMES, LOADER_UIDS, listPacks, packsDir, readPack, root } from "./lib.mjs";
 
 const OWNER = "hybes";
 const REPO = "mc";
 const RAW = `https://raw.githubusercontent.com/${OWNER}/${REPO}/main`;
 const SITE = `https://${OWNER}.github.io/${REPO}`;
 
-const root = path.resolve(path.dirname(new URL(import.meta.url).pathname), "..");
-const packsDir = path.join(root, "packs");
 const docsDir = path.join(root, "docs");
 const bootstrap = path.join(root, "bin", "packwiz.jar");
 
-const LOADER_UIDS = {
-  forge: "net.minecraftforge",
-  neoforge: "net.neoforged",
-  fabric: "net.fabricmc.fabric-loader",
-  quilt: "org.quiltmc.quilt-loader",
-};
-const LOADER_NAMES = { forge: "Forge", neoforge: "NeoForge", fabric: "Fabric", quilt: "Quilt" };
-
 // Prism names an imported instance after the zip file, so the zip carries the pack's display name.
 const zipName = (pack) => `${pack.name.replace(/[\\/:*?"<>|]/g, "").trim()}.zip`;
-
-// Reads the few values we need from pack.toml without a TOML dependency.
-function readPack(file) {
-  const text = fs.readFileSync(file, "utf8");
-  const get = (key) => text.match(new RegExp(`^${key}\\s*=\\s*"([^"]*)"`, "m"))?.[1];
-  const versions = text.split(/^\[versions\]\s*$/m)[1] ?? "";
-  const loaders = Object.keys(LOADER_UIDS)
-    .map((l) => [l, versions.match(new RegExp(`^${l}\\s*=\\s*"([^"]*)"`, "m"))?.[1]])
-    .filter(([, v]) => v);
-  if (loaders.length !== 1) throw new Error(`${file}: expected exactly one mod loader`);
-  const mc = versions.match(/^minecraft\s*=\s*"([^"]*)"/m)?.[1];
-  if (!mc) throw new Error(`${file}: missing minecraft version`);
-  return {
-    name: get("name"),
-    description: get("description") ?? "",
-    version: get("version") ?? "",
-    mc,
-    loader: loaders[0][0],
-    loaderVersion: loaders[0][1],
-    modCount: fs.existsSync(path.join(path.dirname(file), "mods"))
-      ? fs.readdirSync(path.join(path.dirname(file), "mods")).filter((f) => f.endsWith(".toml")).length
-      : 0,
-  };
-}
 
 function buildZip(slug, pack) {
   const tmp = fs.mkdtempSync(path.join(os.tmpdir(), "pack-"));
@@ -124,25 +91,28 @@ function page(packs) {
   main { max-width: 640px; margin: 0 auto; padding: 32px 16px 64px; }
   h1 { font-size: 1.6rem; margin: 0 0 4px; }
   h2 { font-size: 1.2rem; margin: 0; }
-  ul { list-style: none; padding: 0; margin: 24px 0; }
-  li { padding: 20px 0; border-top: 1px solid var(--line); }
+  a { color: var(--accent); }
+  .packs { list-style: none; padding: 0; margin: 24px 0; }
+  .packs > li { padding: 20px 0; border-top: 1px solid var(--line); }
   .meta, .lead, footer { color: var(--muted); }
   .meta { margin: 2px 0 8px; font-size: 0.9rem; }
   .install { display: inline-block; background: var(--accent); color: var(--accent-fg); padding: 8px 16px; border-radius: 6px; text-decoration: none; font-weight: 600; margin-right: 12px; }
   .alt { color: var(--muted); font-size: 0.9rem; }
-  ol { padding-left: 20px; }
-  footer { font-size: 0.9rem; border-top: 1px solid var(--line); padding-top: 16px; }
+  ol { padding-left: 20px; margin: 8px 0 16px; }
+  ol li { margin: 4px 0; }
+  footer { font-size: 0.95rem; border-top: 1px solid var(--line); padding-top: 20px; }
+  footer h2 { font-size: 1rem; color: var(--fg); }
 </style>
 </head>
 <body>
 <main>
   <h1>Minecraft Packs</h1>
-  <p class="lead">Click Install, then Yes in Prism. Mods update by themselves every time you press Play.</p>
-  <ul>
+  <p class="lead">Click Install, then Yes in Prism. Mods update by themselves every time you press Play. Every pack works with a controller, and the newer ones include WorldEdit and BuildPaste for instant builds.</p>
+  <ul class="packs">
 ${items}
   </ul>
   <footer>
-    <p>First time?</p>
+    <h2>First time?</h2>
     <ol>
       <li>Install <a href="https://prismlauncher.org/download/">Prism Launcher</a>.</li>
       <li>In Prism, open Accounts and sign in with the Microsoft account that owns Minecraft Java.</li>
@@ -157,11 +127,7 @@ ${items}
 }
 
 fs.mkdirSync(docsDir, { recursive: true });
-const packs = fs
-  .readdirSync(packsDir)
-  .filter((slug) => fs.existsSync(path.join(packsDir, slug, "pack.toml")))
-  .sort()
-  .map((slug) => ({ slug, pack: readPack(path.join(packsDir, slug, "pack.toml")) }));
+const packs = listPacks();
 
 for (const { slug, pack } of packs) {
   execFileSync(path.join(os.homedir(), ".local/bin/packwiz"), ["refresh"], { cwd: path.join(packsDir, slug), stdio: "ignore" });

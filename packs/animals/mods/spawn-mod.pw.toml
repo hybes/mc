@@ -1,0 +1,13 @@
+name = "Spawn"
+filename = "spawn-4.0.8-1.21.1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/rex9wwpz/versions/OgmUYgeL/spawn-4.0.8-1.21.1.jar"
+hash-format = "sha512"
+hash = "f6db8f8a11d90d973ad4e7041816793a70e298949c4d378cb08a2b78937327c8f2d5c75d1f938a0493adad1a5a1c6fda67949867b7c7b1c56c5d58eda8ae8204"
+
+[update]
+[update.modrinth]
+mod-id = "rex9wwpz"
+version = "OgmUYgeL"

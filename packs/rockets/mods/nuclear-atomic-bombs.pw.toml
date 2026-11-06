@@ -1,0 +1,13 @@
+name = "Nuclear and Atomic Bombs"
+filename = "nuclearbomb-1.0.0.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/uDLtQHSc/versions/F4axIpDj/nuclearbomb-1.0.0.jar"
+hash-format = "sha512"
+hash = "ec0b6dab8c2153bb9b767448151bfcb471224a0e775add802530074d49a4647499478c575681472ab897f01ebb0e5b4e1d3d297776ac7dd52271ec0e8991a528"
+
+[update]
+[update.modrinth]
+mod-id = "uDLtQHSc"
+version = "F4axIpDj"

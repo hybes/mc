@@ -1,0 +1,13 @@
+name = "Rick's Portal Gun [Forge/NeoForge]"
+filename = "ricksportalgun-neoforge-1.21.1-1.4.5.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/YmiD4MZg/versions/UWOt28bl/ricksportalgun-neoforge-1.21.1-1.4.5.jar"
+hash-format = "sha512"
+hash = "8581670a0e15fa8692efb3e9e57f14fbe4646226bd90eb1a977fda0870deb2661d1506ff67f3f2a8c663b02bf68818c9103724b33ffed255a7c15c33b8eaa875"
+
+[update]
+[update.modrinth]
+mod-id = "YmiD4MZg"
+version = "UWOt28bl"

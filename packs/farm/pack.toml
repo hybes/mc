@@ -1,0 +1,14 @@
+name = "Farm & Kitchen"
+author = "hybes"
+version = "1.0.0"
+description = "Farmer's Delight and friends, Let's Do Farm & Charm, Meadow and Beachparty, Cooking for Blockheads and Aquaculture fishing."
+pack-format = "packwiz:1.1.0"
+
+[index]
+file = "index.toml"
+hash-format = "sha256"
+hash = "f04acfbd79a45cd457dc7205d75e5e12889d5ee4a7073dee774a5b881bad54e4"
+
+[versions]
+minecraft = "1.21.1"
+neoforge = "21.1.265"

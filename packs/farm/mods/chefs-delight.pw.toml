@@ -1,0 +1,13 @@
+name = "Chef's Delight - Farmer's Delight Villagers"
+filename = "chefsdelight-1.0.6.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/pvcsfne4/versions/N8hZwT7r/chefsdelight-1.0.6.jar"
+hash-format = "sha512"
+hash = "a9052c7343ead876fd3c772e2c6bd274e4401bdad66458667f9a9cf5ea52c2778ecbb4051a9238ab9f6430a0d83be0619240a9c6ff32732a1916bc96d82148f6"
+
+[update]
+[update.modrinth]
+mod-id = "pvcsfne4"
+version = "N8hZwT7r"

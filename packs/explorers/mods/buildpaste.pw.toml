@@ -1,0 +1,13 @@
+name = "BuildPaste - Instant Structures"
+filename = "BuildPasteMod_NeoForge-1.21v2.0.3.jar"
+side = "client"
+
+[download]
+url = "https://cdn.modrinth.com/data/9kNC5Mrh/versions/WBOknzO9/BuildPasteMod_NeoForge-1.21v2.0.3.jar"
+hash-format = "sha512"
+hash = "57c7b506609e65227e51c2f8f80bf5234805b3700ccf86b73ca1f563bf7c2429a6fa2444007426f5b4244930f0cd2f68349cfe253ef9f411d7f8412a1ed3f4f2"
+
+[update]
+[update.modrinth]
+mod-id = "9kNC5Mrh"
+version = "WBOknzO9"
